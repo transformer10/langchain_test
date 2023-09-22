@@ -1,4 +1,5 @@
-import os
-import util.config
+import requests
+from util import conf
 
-print(dict(util.config.get_ini_config().items('mysql')).get('username'))
+data = requests.get('http://localhost:8080/api/v1/weather/today').text
+print(data)
